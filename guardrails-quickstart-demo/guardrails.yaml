@@ -6,7 +6,7 @@ metadata:
   name: guardrails-orchestrator
 spec:
   autoConfig:
-      inferenceServiceToGuardrail: phi3
+      inferenceServiceToGuardrail: gpt-oss-20b
       detectorServiceLabelToMatch: trustyai/guardrails
   enableBuiltInDetectors: true
   enableGuardrailsGateway: true

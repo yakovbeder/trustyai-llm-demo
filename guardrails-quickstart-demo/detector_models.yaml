@@ -100,12 +100,12 @@ spec:
 apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
-  name: jailbreak-detector
+  name: prompt-injection-detector
   labels:
     opendatahub.io/dashboard: 'true'
     trustyai/guardrails: 'true'
   annotations:
-    openshift.io/display-name: jailbreak-detector
+    openshift.io/display-name: prompt-injection-detector
     serving.knative.openshift.io/enablePassthrough: 'true'
     sidecar.istio.io/inject: 'true'
     security.opendatahub.io/enable-auth: 'true'
@@ -122,4 +122,4 @@ spec:
       runtime: guardrails-detector-runtime-hap
       storage:
         key: aws-connection-data-connection
-        path: jailbreak-classifier
+        path: deberta-v3-base-prompt-injection-v2

@@ -56,10 +56,9 @@ spec:
             - -c
             - |
               models=(
-                microsoft/Phi-3-mini-4k-instruct
                 ibm-granite/granite-guardian-hap-38m
                 wajidlinux99/gibberish-text-detector
-                jackhhao/jailbreak-classifier
+                protectai/deberta-v3-base-prompt-injection-v2
               )
               echo "Starting download"
               for model in "${models[@]}"; do
