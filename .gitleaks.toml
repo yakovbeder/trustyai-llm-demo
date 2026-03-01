@@ -1,0 +1,11 @@
+[allowlist]
+  description = "Allow placeholder tokens in nemo-guardrails manifests"
+
+  regexes = [
+    '''<API_KEY>''',
+    '''<BASE64_ENCODED_TOKEN>''',
+    '''<MODEL_ROUTE_HOST>''',
+    '''<NEMO_ROUTE_HOST>''',
+    '''<GUARDRAILS_ROUTE_HOST>''',
+    '''<MODEL_NAME>''',
+  ]
