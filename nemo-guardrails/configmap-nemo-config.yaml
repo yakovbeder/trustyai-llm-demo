@@ -39,9 +39,9 @@ data:
       - type: main
         engine: openai
         parameters:
-          openai_api_base: "https://gpt-oss-20b-nemo-guardrails.apps.cluster-nqz5p.nqz5p.sandbox2010.opentlc.com/v1"
-          model_name: "gpt-oss-20b"
-          api_key: "sha256~plaC8t_O9FTNo62epyAR7_BHLoajOAb3gtuC3Bzy7sY"
+        openai_api_base: "https://<MODEL_ROUTE_HOST>/v1"
+        model_name: "<MODEL_NAME>"
+        api_key: "<API_KEY>"
     rails:
       input:
         flows:

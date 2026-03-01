@@ -4,7 +4,7 @@ metadata:
   name: nemo-guardrails
   namespace: nemo-guardrails
 spec:
-  host: nemo-guardrails-nemo-guardrails.apps.cluster-nqz5p.nqz5p.sandbox2010.opentlc.com
+  host: <NEMO_ROUTE_HOST>
   to:
     kind: Service
     name: nemo-guardrails-service

@@ -51,7 +51,7 @@
 ## Setup
 
 ```bash
-export GUARDRAILS_GATEWAY=https://guardrails-orchestrator-gateway-nemo-guardrails.apps.cluster-nqz5p.nqz5p.sandbox2010.opentlc.com
+export GUARDRAILS_GATEWAY=https://<GUARDRAILS_ROUTE_HOST>
 export TOKEN=$(oc whoami -t)
 ```
 

@@ -25,7 +25,7 @@ spec:
             - name: MAIN_MODEL_ENGINE
               value: openai
             - name: MAIN_MODEL_BASE_URL
-              value: https://gpt-oss-20b-nemo-guardrails.apps.cluster-nqz5p.nqz5p.sandbox2010.opentlc.com/v1
+              value: https://<MODEL_ROUTE_HOST>/v1
             - name: OPENAI_API_KEY
               valueFrom:
                 secretKeyRef:
