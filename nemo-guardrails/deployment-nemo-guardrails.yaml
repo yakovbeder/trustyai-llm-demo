@@ -1,0 +1,42 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nemo-guardrails
+  namespace: nemo-guardrails
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nemo-guardrails
+  template:
+    metadata:
+      labels:
+        app: nemo-guardrails
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: nemo-guardrails
+          image: quay.io/rh-ee-mmisiura/nemo-guardrails:models-endpoint
+          imagePullPolicy: Always
+          env:
+            - name: CONFIG_ID
+              value: rails-custom-action
+            - name: MAIN_MODEL_ENGINE
+              value: openai
+            - name: MAIN_MODEL_BASE_URL
+              value: https://gpt-oss-20b-nemo-guardrails.apps.cluster-nqz5p.nqz5p.sandbox2010.opentlc.com/v1
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: nemo-sa-token
+                  key: token
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config/rails-custom-action
+      volumes:
+        - name: config-volume
+          configMap:
+            name: nemo-config
